@@ -2,7 +2,7 @@
 
 import { Layout } from 'antd';
 import useCollapseStore from '@/store/collapse';
-import LeftSidePanel from '@/app/chat/_components/left-side';
+import LeftSidePanel from './_components/left-side';
 import type { CollapseState } from '@/store/collapse';
 
 const { Content, Sider } = Layout;

@@ -1,6 +1,4 @@
-'use client';
-
-export default function Chat() {
+export default function Code() {
   return (
     <main>
       <span>hello world</span>

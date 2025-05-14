@@ -1,1 +1,6 @@
-{}
+{
+  "search": {
+    "placeholder": "search assistants ...",
+    "noResults": "No related assistants found"
+  }
+}

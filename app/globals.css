@@ -4,16 +4,35 @@
   --background: #ffffff;
   --foreground: #595959;
   --primary-color: oklch(86.5% 0.127 207.078);
+  --primary-color-100: oklch(98.4% 0.019 200.873);
+  --primary-color-200: oklch(95.6% 0.045 203.388);
+  --primary-color-300: oklch(91.7% 0.08 205.041);
+  --primary-color-400: oklch(86.5% 0.127 207.078);
   --second-color: oklch(85.5% 0.138 181.071);
+  --second-color-100: oklch(98.4% 0.019 174.866);
+  --second-color-200: oklch(95.6% 0.045 177.381);
+  --second-color-300: oklch(91.7% 0.08 179.034);
+  --second-color-400: oklch(85.5% 0.138 181.071);
+
   --divider-color: oklch(55.1% 0.027 264.364);
+  --background-hover-color: #fafafa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary-color);
+  --color-primary-100: var(--second-color-100);
+  --color-primary-200: var(--second-color-200);
+  --color-primary-300: var(--second-color-300);
+  --color-primary-400: var(--second-color-400);
   --color-secondary: var(--second-color);
+  --color-secondary-100: var(--primary-color-100);
+  --color-secondary-200: var(--primary-color-200);
+  --color-secondary-300: var(--primary-color-300);
+  --color-secondary-400: var(--primary-color-400);
   --color-divider: var(--divider-color);
+  --color-background-hover: var(--background-hover-color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -25,6 +44,21 @@
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
+  }
+
+  .scroll-hover-hide {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .scroll-hover-hide::-webkit-scrollbar {
+    width: 0 !important;
+    background: transparent !important;
+  }
+
+  .scroll-hover-hide:hover::-webkit-scrollbar {
+    width: 8px !important;
+    /* 悬停时显示滚动条宽度 */
   }
 }
 

@@ -3,7 +3,7 @@ import '@ant-design/v5-patch-for-react-19';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
-import { dir } from 'i18next';
+// import { dir } from 'i18next';
 import { languages } from '@/app/i18n/settings';
 import { getT } from '@/app/i18n';
 
@@ -40,11 +40,11 @@ export default async function RootLayout({
 }>) {
   const { lng } = await params;
   return (
-    <html lang={lng} dir={dir(lng)} data-theme="light" suppressHydrationWarning>
+    <html lang={lng} dir="ltr" data-theme="light" suppressHydrationWarning>
       <head>
         <script
           defer={true}
-          src={'//at.alicdn.com/t/c/font_4917653_ulumt55jrkg.js'}
+          src={'//at.alicdn.com/t/c/font_4917653_okp9ngseu9.js'}
         />
       </head>
 

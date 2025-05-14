@@ -1,49 +1,27 @@
 'use client';
 
-import { Layout } from 'antd';
-import useCollapseStore from '@/store/collapse';
-import LeftSidePanel from './_components/left-side';
-import type { CollapseState } from '@/store/collapse';
+import { memo } from 'react';
+import { Splitter } from 'antd';
 
-const { Content, Sider } = Layout;
+import AssistantSider from './_components/assistant-sider';
 
-export default function ChatLayout({
+export default memo(function ChatLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const collapse_left = useCollapseStore(
-    (state: CollapseState) => state.collapse_left
-  );
-
-  const collapse_right = useCollapseStore(
-    (state: CollapseState) => state.collapse_right
-  );
-
   return (
-    <main className="flex flex-row overflow-hidden min-h-screen w-full">
-      <Sider width={'7%'} className="invisible !bg-background  lg:visible">
-        <LeftSidePanel />
-      </Sider>
-      <Sider
-        trigger={null}
+    <Splitter>
+      <Splitter.Panel
+        defaultSize="20%"
         collapsible
-        collapsed={collapse_left}
-        width={'15%'}
+        min={'15%'}
+        max={'25%'}
         className="invisible !bg-background md:visible"
       >
-        sider-second
-      </Sider>
-      <Content className="w-full grow shrink">{children}</Content>
-      <Sider
-        trigger={null}
-        collapsible
-        collapsed={collapse_right}
-        width={'15%'}
-        className="invisible !bg-background lg:visible"
-      >
-        sider-right
-      </Sider>
-    </main>
+        <AssistantSider />
+      </Splitter.Panel>
+      <Splitter.Panel collapsible>{children}</Splitter.Panel>
+    </Splitter>
   );
-}
+});

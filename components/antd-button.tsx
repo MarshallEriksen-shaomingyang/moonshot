@@ -23,9 +23,20 @@ export default function AntdButton({
   const buttonTheme = () => {
     if (secondary) {
       return {
-        colorPrimary: 'var(--secondary-color)',
+        colorPrimary: 'var(--second-color) !important',
+        colorPrimaryActive: 'var(--second-color-400) !important',
+        colorPrimaryBg: 'var(--second-color-300) !important',
+        colorPrimaryBgHover: 'var(--second-color-200) !important',
+        colorPrimaryHover: 'var(--second-color-300) !important',
       };
     }
+    return {
+      colorPrimary: 'var(--primary-color) !important',
+      colorPrimaryActive: 'var(--primary-color-400) !important',
+      colorPrimaryBg: 'var(--primary-color-300) !important',
+      colorPrimaryBgHover: 'var(--primary-color-200) !important',
+      colorPrimaryHover: 'var(--primary-color-300) !important',
+    };
   };
 
   return (

@@ -16,7 +16,7 @@ export default function AssistantSider() {
 
   return (
     <div className="h-screen w-full select-none py-1 rounded-md flex flex-col overflow-x-hidden overflow-y-auto overscroll-contain scroll-hover-hide ">
-      <div className="flex justify-center items-center h-[var(--ant-layout-header-height)]">
+      <div className="flex justify-center items-center h-[var(--moonshot-layout-header-height)]">
         <Title className="subpixel-antialiase text-center bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text !text-transparent !mb-0 !mt-2">
           Moonshot&nbsp;AI
         </Title>

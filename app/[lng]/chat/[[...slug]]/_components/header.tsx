@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 export default function HeaderContent() {
   return (
-    <div className="flex flex-row justify-between items-center !leading-[var(--ant-layout-header-height)]">
+    <div className="flex flex-row justify-between items-center !leading-[var(--moonshot-layout-header-height)]">
       <Space size={8}>
         <Avatar />
         <Title

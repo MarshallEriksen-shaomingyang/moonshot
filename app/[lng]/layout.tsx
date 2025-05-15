@@ -9,7 +9,7 @@ export default function LngLayout({
 }>) {
   return (
     <div className="flex flex-row overflow-hidden min-h-screen w-full">
-      <div className="w-[7%] invisible !bg-background  lg:visible">
+      <div className="w-0 lg:w-[7%] invisible !bg-background  lg:visible">
         <LeftSidePanel />
       </div>
       {children}

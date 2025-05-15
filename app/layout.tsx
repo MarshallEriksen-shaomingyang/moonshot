@@ -44,7 +44,7 @@ export default async function RootLayout({
       <head>
         <script
           defer={true}
-          src={'//at.alicdn.com/t/c/font_4917653_okp9ngseu9.js'}
+          src={'//at.alicdn.com/t/c/font_4917653_rdrtxzrzcoh.js'}
         />
       </head>
 
@@ -52,7 +52,13 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AntdRegistry>
-          <ConfigProvider direction="ltr" theme={{ cssVar: true }}>
+          <ConfigProvider
+            direction="ltr"
+            prefixCls="moonshot"
+            theme={{
+              cssVar: true,
+            }}
+          >
             {children}
           </ConfigProvider>
         </AntdRegistry>

@@ -14,7 +14,7 @@ export default function CommunicateLayout({
       <Header className="!bg-background rounded-md !px-6 !shadow-md">
         <HeaderContent />
       </Header>
-      <Content className="h-[calc(100vh-var(--ant-layout-header-height))]">
+      <Content className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
         {children}
       </Content>
     </Layout>

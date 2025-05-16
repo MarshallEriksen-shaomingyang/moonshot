@@ -5,13 +5,13 @@ import AntdButton from '@/components/antd-button';
 
 export default function ProviderDetail() {
   return (
-    <div className="mt-2 flex flex-col gap-4">
+    <div className="mt-4 flex flex-col gap-4">
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-1  flex flex-col">
           <Typography.Title className="!text-foreground !mb-0" level={5}>
             API Key
           </Typography.Title>
-          <Typography.Text className="!text-foreground">
+          <Typography.Text className="!text-foreground-describe">
             请输入供应商提供的API Key
           </Typography.Text>
         </div>
@@ -24,7 +24,7 @@ export default function ProviderDetail() {
           <Typography.Title className="!text-foreground !mb-0" level={5}>
             API 代理地址
           </Typography.Title>
-          <Typography.Text className="!text-foreground">
+          <Typography.Text className="!text-foreground-describe">
             请输入包括(https)的完整路径名
           </Typography.Text>
         </div>
@@ -52,7 +52,7 @@ export default function ProviderDetail() {
           </AntdButton>
         </div>
       </div>
-      <div className="grid justify-item-center mt-2">
+      <div className="grid justify-item-center mt-4">
         <div className="col-start-2">
           <Icon iconClass="icon-buoumao" svgClass="w-10 h-10" />
           <Typography.Text className="text-center !text-foreground">

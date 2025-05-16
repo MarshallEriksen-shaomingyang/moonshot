@@ -1,5 +1,10 @@
 {
-  "title": "Moonshot · 一个创意游乐场",
+  "title": "Moonshot · 功能强大的ai平台",
   "description": "一个探索AI驱动的自动化任务执行的广场",
-  "welcome": "欢迎来到Moonshot"
+  "welcome": "欢迎来到Moonshot",
+  "chat": "与AI进行对话",
+  "modal provider": "模型提供商",
+  "MCP Tools": "MCP工具",
+  "settings": "设置",
+  "document": "文档"
 }

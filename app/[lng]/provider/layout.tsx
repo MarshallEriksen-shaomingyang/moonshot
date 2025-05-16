@@ -1,4 +1,4 @@
-'use client';
+import { Layout } from 'antd';
 import ModalLists from './_components/provider_lists';
 
 export default function ModalLayout({
@@ -7,13 +7,13 @@ export default function ModalLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full h-screen bg-background overflow-hidden grid grid-cols-4">
-      <div className="col-span-1">
-        <ModalLists />
+    <Layout>
+      <div className="w-full h-screen bg-background overflow-hidden lg:grid lg:grid-cols-4">
+        <div className="lg:col-span-1">
+          <ModalLists />
+        </div>
+        <div className="lg:col-span-3">{children}</div>
       </div>
-      <div className="col-span-3">
-        <div className="h-full p-2">{children}</div>
-      </div>
-    </div>
+    </Layout>
   );
 }

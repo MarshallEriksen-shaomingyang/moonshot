@@ -1,11 +1,19 @@
+'use client';
 import { Flex, Space, Tooltip } from 'antd';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import Icon from '@/components/icon';
 import AntdButton from '@/components/antd-button';
 import Logo from '@/public/images/logo.webp';
+import { useT } from '@/app/i18n/client';
 
 export default function LeftSidePanel() {
+  const { t } = useT('common');
+  const router = useRouter();
+  const handleNavigate = (path: string) => {
+    router.push(path);
+  };
   return (
     <div className="h-screen py-1 border-r-1 border-divider/15 rounded-md hover:bg-background-hover ">
       <div className="h-full mb-2">
@@ -28,16 +36,17 @@ export default function LeftSidePanel() {
               direction="vertical"
               size="middle"
             >
-              <Tooltip title="聊天" placement="right">
+              <Tooltip title={t('chat')} placement="right">
                 <AntdButton
                   type="primary"
                   shape="circle"
                   variant="filled"
                   size="large"
                   icon={<Icon iconClass="icon-chat" svgClass="w-10 h-10" />}
+                  onClick={() => handleNavigate('/chat')}
                 />
               </Tooltip>
-              <Tooltip title="模型" placement="right">
+              <Tooltip title={t('modal provider')} placement="right">
                 <AntdButton
                   type="primary"
                   shape="circle"
@@ -46,24 +55,27 @@ export default function LeftSidePanel() {
                   icon={
                     <Icon iconClass="icon-moxingguanli" svgClass="w-10 h-10" />
                   }
+                  onClick={() => handleNavigate('/provider')}
                 />
               </Tooltip>
-              <Tooltip title="MCP 工具" placement="right">
+              <Tooltip title={t('MCP Tools')} placement="right">
                 <AntdButton
                   type="primary"
                   shape="circle"
                   variant="filled"
                   size="large"
                   icon={<Icon iconClass="icon-battery" svgClass="w-10 h-10" />}
+                  onClick={() => handleNavigate('/mcp')}
                 />
               </Tooltip>
-              <Tooltip title="设置" placement="right">
+              <Tooltip title={t('settings')} placement="right">
                 <AntdButton
                   type="primary"
                   shape="circle"
                   variant="filled"
                   size="large"
                   icon={<Icon iconClass="icon-settings" svgClass="w-10 h-10" />}
+                  onClick={() => handleNavigate('/settings')}
                 />
               </Tooltip>
             </Space>
@@ -83,7 +95,7 @@ export default function LeftSidePanel() {
                 }
               />
             </Tooltip>
-            <Tooltip title="文档" placement="right">
+            <Tooltip title={t('document')} placement="right">
               <AntdButton
                 type="primary"
                 shape="circle"

@@ -3,6 +3,7 @@ import { Typography, Input, Tooltip, Splitter } from 'antd';
 import Icon from '@/components/icon';
 import AntdButton from '@/components/antd-button';
 import MoonshotList from './history-list';
+import ScrollContent from '@/components/scroll-content';
 
 export default function RightSidePanel() {
   return (
@@ -40,46 +41,45 @@ export default function RightSidePanel() {
           rows={4}
         />
       </Splitter.Panel>
-      <Splitter.Panel
-        collapsible
-        defaultSize={'55%'}
-        min={'0%'}
-        max={'100%'}
-        className="h-full overflow-y-scroll scroll-hover-hide scroll-smooth !overflow-x-hidden"
-      >
-        <div className="h-10 leading-10 px-1.5 flex justify-between">
-          <Typography.Title
-            level={5}
-            className="tracking-wide !text-foreground select-none"
-          >
-            历史记录
-          </Typography.Title>
-          <div className="flex gap-2">
-            <Tooltip title="搜索历史" placement="left">
-              <AntdButton
-                type="primary"
-                shape="circle"
-                variant="filled"
-                size="small"
-                icon={
-                  <Icon iconClass="icon-search_list_light" svgClass="w-8 h-8" />
-                }
-              />
-            </Tooltip>
-            <Tooltip title="清空历史" placement="left">
-              <AntdButton
-                type="primary"
-                shape="circle"
-                variant="filled"
-                size="small"
-                icon={<Icon iconClass="icon-delete" svgClass="w-10 h-10" />}
-              />
-            </Tooltip>
+      <Splitter.Panel collapsible defaultSize={'55%'} min={'0%'} max={'100%'}>
+        <ScrollContent>
+          <div className="h-10 leading-10 px-1.5 flex justify-between">
+            <Typography.Title
+              level={5}
+              className="tracking-wide !text-foreground select-none"
+            >
+              历史记录
+            </Typography.Title>
+            <div className="flex gap-2">
+              <Tooltip title="搜索历史" placement="left">
+                <AntdButton
+                  type="primary"
+                  shape="circle"
+                  variant="filled"
+                  size="small"
+                  icon={
+                    <Icon
+                      iconClass="icon-search_list_light"
+                      svgClass="w-8 h-8"
+                    />
+                  }
+                />
+              </Tooltip>
+              <Tooltip title="清空历史" placement="left">
+                <AntdButton
+                  type="primary"
+                  shape="circle"
+                  variant="filled"
+                  size="small"
+                  icon={<Icon iconClass="icon-delete" svgClass="w-10 h-10" />}
+                />
+              </Tooltip>
+            </div>
           </div>
-        </div>
-        <div className="flex-1 p-2">
-          <MoonshotList />
-        </div>
+          <div className="flex-1 p-2">
+            <MoonshotList />
+          </div>
+        </ScrollContent>
       </Splitter.Panel>
     </Splitter>
   );

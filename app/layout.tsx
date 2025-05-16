@@ -1,12 +1,10 @@
 import '@ant-design/v5-patch-for-react-19';
-
 import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
-// import { dir } from 'i18next';
 import { languages } from '@/app/i18n/settings';
 import { getT } from '@/app/i18n';
-
 import './globals.css';
 
 export async function generateStaticParams() {
@@ -31,6 +29,34 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const notoSansSC = localFont({
+  src: [
+    {
+      path: '../public/fonts/NotoSansSC-Subset-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NotoSansSC-Subset-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/NotoSansSC-Subset-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-noto-sans-sc',
+});
+
+const getFontFamilyByLang = (lng: string) => {
+  if (lng === 'zh') {
+    return `${notoSansSC.style.fontFamily}, ${geistSans.style.fontFamily}, sans-serif`;
+  }
+  return `${geistSans.style.fontFamily}, sans-serif`;
+};
+
 export default async function RootLayout({
   children,
   params,
@@ -40,16 +66,15 @@ export default async function RootLayout({
 }>) {
   const { lng } = await params;
   return (
-    <html lang={lng} dir="ltr" data-theme="light" suppressHydrationWarning>
+    <html lang={lng} dir="ltr" data-theme="light">
       <head>
         <script
           defer={true}
           src={'//at.alicdn.com/t/c/font_4917653_rdrtxzrzcoh.js'}
         />
       </head>
-
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansSC.variable} antialiased`}
       >
         <AntdRegistry>
           <ConfigProvider
@@ -57,6 +82,10 @@ export default async function RootLayout({
             prefixCls="moonshot"
             theme={{
               cssVar: true,
+              token: {
+                fontFamily: getFontFamilyByLang(lng),
+                fontFamilyCode: `${geistMono.style.fontFamily}, monospace`,
+              },
             }}
           >
             {children}

@@ -29,7 +29,12 @@ export default function AssistantCard({
         },
       }}
     >
-      <Card className="cursor-pointer relative" hoverable {...props}>
+      <Card
+        variant="borderless"
+        className="cursor-pointer relative"
+        hoverable
+        {...props}
+      >
         <Meta
           avatar={<Avatar src={avatar} />}
           title={title}

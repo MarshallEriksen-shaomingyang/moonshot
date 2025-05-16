@@ -1,6 +1,4 @@
-'use client';
-
-import LeftSidePanel from './chat/_components/left-side';
+import LeftSidePanel from './_components/left-side';
 
 export default function LngLayout({
   children,

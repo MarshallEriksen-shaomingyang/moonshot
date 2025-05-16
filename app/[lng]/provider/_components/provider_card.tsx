@@ -1,6 +1,6 @@
 import { Card, ConfigProvider } from 'antd';
 import Icon from '@/components/icon';
-import ModalLogo from './modal_logo';
+import ModalLogo from './provider_logo';
 
 interface IProps {
   id: string; // 供应商id
@@ -29,7 +29,7 @@ export default function ModalCard({ id, name, enabled = false }: IProps) {
         variant="borderless"
         hoverable
         onClick={() => handleClick(id)}
-        className="!rounded-lg !shadow-sm"
+        className="!rounded-lg"
       >
         <div className="grid grid-cols-4 content-center">
           <div className="col-span-2 justify-self-start flex items-center gap-2">
@@ -38,9 +38,7 @@ export default function ModalCard({ id, name, enabled = false }: IProps) {
           <div className="col-span-2 justify-items-stretch justify-self-end">
             {enabled ? (
               <Icon iconClass="icon-dot" svgClass="w-12 h-12" />
-            ) : (
-              <Icon iconClass="icon-dot1" svgClass="w-12 h-12" />
-            )}
+            ) : null}
           </div>
         </div>
       </Card>

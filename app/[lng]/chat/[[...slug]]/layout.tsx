@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 
 import HeaderContent from './_components/header';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 export default function CommunicateLayout({
   children,
 }: Readonly<{
@@ -11,9 +11,7 @@ export default function CommunicateLayout({
 }>) {
   return (
     <Layout className="flex flex-row overflow-hidden min-h-screen w-full">
-      <Header className="!bg-background rounded-md !px-6 !shadow-md">
-        <HeaderContent />
-      </Header>
+      <HeaderContent />
       <Content className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
         {children}
       </Content>

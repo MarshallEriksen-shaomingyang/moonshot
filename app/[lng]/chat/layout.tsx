@@ -1,11 +1,8 @@
-'use client';
-
-import { memo } from 'react';
 import { Splitter } from 'antd';
 
 import AssistantSider from './_components/assistant-sider';
 
-export default memo(function ChatLayout({
+export default function ChatLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -24,4 +21,4 @@ export default memo(function ChatLayout({
       <Splitter.Panel collapsible>{children}</Splitter.Panel>
     </Splitter>
   );
-});
+}

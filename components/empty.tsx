@@ -1,3 +1,4 @@
+'use client';
 import { Empty, Typography } from 'antd';
 import Icon from '@/components/icon';
 import { useT } from '@/app/i18n/client';

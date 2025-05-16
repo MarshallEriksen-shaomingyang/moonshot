@@ -8,7 +8,6 @@ const columns: TableProps<ModalType>['columns'] = [
     title: '名称',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a>{text}</a>,
   },
 ];
 

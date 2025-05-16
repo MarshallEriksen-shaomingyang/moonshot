@@ -1,8 +1,9 @@
 import { Namespace, FlatNamespace, KeyPrefix } from 'i18next';
+import { headers } from 'next/headers';
 import { FallbackNs } from 'react-i18next';
+
 import i18next from './i18next';
 import { headerName } from './settings';
-import { headers } from 'next/headers';
 
 type $Tuple<T> = readonly [T?, ...T[]];
 type $FirstNamespace<Ns extends Namespace> = Ns extends readonly unknown[]

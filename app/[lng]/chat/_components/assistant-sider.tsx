@@ -1,9 +1,12 @@
 'use client';
 import { useState } from 'react';
+
 import { Typography, Input, Space } from 'antd';
+
 import Icon from '@/components/icon';
-import AssistantContent from './assistant-content';
+
 import AssistantCard from './assistant-card';
+import AssistantContent from './assistant-content';
 import AssistantSearchContent from './assistant-search-content';
 
 const { Title } = Typography;

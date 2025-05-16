@@ -1,6 +1,7 @@
-import ProviderForm from './_components/provider_form';
-import ScrollContent from '@/components/scroll-content';
 import HeaderComponent from '@/components/header';
+import ScrollContent from '@/components/scroll-content';
+
+import ProviderForm from './_components/provider_form';
 
 export default function Page() {
   return (

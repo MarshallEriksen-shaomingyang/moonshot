@@ -1,5 +1,7 @@
 import { Card, ConfigProvider } from 'antd';
+
 import Icon from '@/components/icon';
+
 import ModalLogo from './provider_logo';
 
 interface IProps {

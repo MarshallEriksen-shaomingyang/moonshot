@@ -3,10 +3,10 @@ import { Flex, Space, Tooltip } from 'antd';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-import Icon from '@/components/icon';
-import AntdButton from '@/components/antd-button';
-import Logo from '@/public/images/logo.webp';
 import { useT } from '@/app/i18n/client';
+import AntdButton from '@/components/antd-button';
+import Icon from '@/components/icon';
+import Logo from '@/public/images/logo.webp';
 
 export default function LeftSidePanel() {
   const { t } = useT('common');

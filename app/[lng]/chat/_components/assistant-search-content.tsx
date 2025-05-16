@@ -1,7 +1,10 @@
 import { useState } from 'react';
+
 import { Empty, Typography, List } from 'antd';
+
 import { useT } from '@/app/i18n/client';
 import Icon from '@/components/icon';
+
 import AssistantCard from './assistant-card';
 
 export default function AssistantSearchContent() {

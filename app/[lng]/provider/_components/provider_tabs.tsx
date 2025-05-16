@@ -1,7 +1,9 @@
 'use client';
 import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
+
 import Icon from '@/components/icon';
+
 import ModalActionCard from './provider-action-card';
 
 const items: TabsProps['items'] = [

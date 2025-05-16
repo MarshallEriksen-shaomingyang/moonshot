@@ -1,9 +1,13 @@
 import { memo } from 'react';
+
 import { Card, ConfigProvider, Typography, Switch } from 'antd';
+
 import EmptyComponent from '@/components/empty';
-import ModalLogo from './provider_logo';
 import ScrollContent from '@/components/scroll-content';
+
 import type { ProviderType } from '../types';
+
+import ModalLogo from './provider_logo';
 
 interface IProps {
   modalList?: ProviderType[];
@@ -39,7 +43,6 @@ const ModalActionCard = ({ modalList }: IProps = { modalList: [] }) => {
                   </div>
                 </div>
                 <Typography.Paragraph
-                  className="!text-foreground/60"
                   ellipsis={{ rows: 2, expandable: true, symbol: 'more' }}
                 >
                   描述生成很长的文字描述 描述生成很长的文字描述

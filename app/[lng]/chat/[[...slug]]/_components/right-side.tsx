@@ -1,9 +1,11 @@
 'use client';
 import { Typography, Input, Tooltip, Splitter } from 'antd';
-import Icon from '@/components/icon';
+
 import AntdButton from '@/components/antd-button';
-import MoonshotList from './history-list';
+import Icon from '@/components/icon';
 import ScrollContent from '@/components/scroll-content';
+
+import MoonshotList from './history-list';
 
 export default function RightSidePanel() {
   return (
@@ -17,7 +19,7 @@ export default function RightSidePanel() {
       >
         <div className="h-10 px-1.5 display flex justify-between items-center">
           <Typography.Title
-            className="tracking-wide !mb-0 !text-foreground select-none"
+            className="tracking-wide !mb-0 select-none"
             level={5}
           >
             角色
@@ -44,10 +46,7 @@ export default function RightSidePanel() {
       <Splitter.Panel collapsible defaultSize={'55%'} min={'0%'} max={'100%'}>
         <ScrollContent>
           <div className="h-10 leading-10 px-1.5 flex justify-between">
-            <Typography.Title
-              level={5}
-              className="tracking-wide !text-foreground select-none"
-            >
+            <Typography.Title level={5} className="tracking-wide select-none">
               历史记录
             </Typography.Title>
             <div className="flex gap-2">

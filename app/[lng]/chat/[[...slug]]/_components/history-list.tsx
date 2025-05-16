@@ -1,6 +1,7 @@
 import { List, Typography } from 'antd';
-import Icon from '@/components/icon';
+
 import AntdButton from '@/components/antd-button';
+import Icon from '@/components/icon';
 
 const data = [
   {
@@ -86,10 +87,7 @@ export default function MoonshotList() {
       dataSource={data}
       renderItem={item => (
         <List.Item className="flex flex-col gap-4 !items-start">
-          <Title
-            level={5}
-            className="!text-foreground/40 !tracking-wide !font-sans !text-sm"
-          >
+          <Title level={5} className=" !tracking-wide !font-sans !text-sm">
             {item.time}
           </Title>
           <div className="w-full flex flex-col gap-2">

@@ -1,6 +1,7 @@
 import { Card, Avatar, ConfigProvider } from 'antd';
-import Icon from '@/components/icon';
+
 import AntdButton from '@/components/antd-button';
+import Icon from '@/components/icon';
 
 const { Meta } = Card;
 

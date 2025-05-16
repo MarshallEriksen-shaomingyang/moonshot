@@ -1,19 +1,18 @@
 'use client';
 import { Input, Typography, Select } from 'antd';
-import Icon from '@/components/icon';
+
 import AntdButton from '@/components/antd-button';
+import Icon from '@/components/icon';
 
 export default function ProviderDetail() {
   return (
     <div className="mt-4 flex flex-col gap-4">
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-1  flex flex-col">
-          <Typography.Title className="!text-foreground !mb-0" level={5}>
+          <Typography.Title className="!mb-0" level={5}>
             API Key
           </Typography.Title>
-          <Typography.Text className="!text-foreground-describe">
-            请输入供应商提供的API Key
-          </Typography.Text>
+          <Typography.Text>请输入供应商提供的API Key</Typography.Text>
         </div>
         <div className="col-span-2 shrink grow">
           <Input.Password placeholder="请输入你的API Key" />
@@ -21,12 +20,10 @@ export default function ProviderDetail() {
       </div>
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-1 flex flex-col">
-          <Typography.Title className="!text-foreground !mb-0" level={5}>
+          <Typography.Title className="!mb-0" level={5}>
             API 代理地址
           </Typography.Title>
-          <Typography.Text className="!text-foreground-describe">
-            请输入包括(https)的完整路径名
-          </Typography.Text>
+          <Typography.Text>请输入包括(https)的完整路径名</Typography.Text>
         </div>
         <div className="col-span-2 shrink grow">
           <Input placeholder="https://moonshot.com/api/" />
@@ -34,7 +31,7 @@ export default function ProviderDetail() {
       </div>
       <div className="grid grid-cols-3 items-center">
         <div className="col-span-1">
-          <Typography.Title className="!text-foreground !mb-0" level={5}>
+          <Typography.Title className="!mb-0" level={5}>
             连通性检查
           </Typography.Title>
         </div>
@@ -52,12 +49,13 @@ export default function ProviderDetail() {
           </AntdButton>
         </div>
       </div>
-      <div className="grid justify-item-center mt-4">
+      <div className="grid grid-cols-[1fr_auto_1fr] mt-4">
         <div className="col-start-2">
           <Icon iconClass="icon-buoumao" svgClass="w-10 h-10" />
-          <Typography.Text className="text-center !text-foreground">
-            我们会保护好你的API Key 和代理地址请保护好你的Secret Key.
-          </Typography.Text>
+          <Typography.Paragraph className="text-center select-none">
+            我们会保护好你的API Key 和代理地址请保护好你的
+            <Typography.Text strong>Secret Key</Typography.Text>.
+          </Typography.Paragraph>
         </div>
       </div>
     </div>

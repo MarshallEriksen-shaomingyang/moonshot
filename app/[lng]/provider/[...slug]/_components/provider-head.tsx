@@ -1,6 +1,8 @@
 import { Switch, Space } from 'antd';
-import ModalLogo from '../../_components/provider_logo';
+
 import AntdButton from '@/components/antd-button';
+
+import ModalLogo from '../../_components/provider_logo';
 
 export default function ProviderHead() {
   return (

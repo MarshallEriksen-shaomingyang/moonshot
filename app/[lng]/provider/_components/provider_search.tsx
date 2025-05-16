@@ -1,7 +1,10 @@
 import { List } from 'antd';
-import ModalCard from './provider_card';
+
 import EmptyComponent from '@/components/empty';
+
 import type { ProviderType } from '../types';
+
+import ModalCard from './provider_card';
 
 interface IProps {
   searchContent: ProviderType[];

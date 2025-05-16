@@ -1,10 +1,11 @@
 import '@ant-design/v5-patch-for-react-19';
-import { Geist, Geist_Mono } from 'next/font/google';
-import localFont from 'next/font/local';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
-import { languages } from '@/app/i18n/settings';
+import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
+
 import { getT } from '@/app/i18n';
+import { languages } from '@/app/i18n/settings';
 import './globals.css';
 
 export async function generateStaticParams() {
@@ -70,7 +71,7 @@ export default async function RootLayout({
       <head>
         <script
           defer={true}
-          src={'//at.alicdn.com/t/c/font_4917653_rdrtxzrzcoh.js'}
+          src={'//at.alicdn.com/t/c/font_4917653_c0335rdwvsr.js'}
         />
       </head>
       <body

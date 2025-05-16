@@ -1,6 +1,7 @@
 'use client';
-import { Table } from 'antd';
+import { Table, Typography } from 'antd';
 import type { TableProps } from 'antd';
+
 import type { ModalType } from '@/app/[lng]/provider/types';
 
 const columns: TableProps<ModalType>['columns'] = [
@@ -21,5 +22,18 @@ const data: ModalType[] = [
 ];
 
 export default function ModalTable() {
-  return <Table<ModalType> columns={columns} dataSource={data} />;
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex justify-between">
+        <Typography.Title className="!mb-0" level={5}>
+          模型列表
+        </Typography.Title>
+      </div>
+      <Table<ModalType>
+        columns={columns}
+        rowSelection={{ type: 'checkbox' }}
+        dataSource={data}
+      />
+    </div>
+  );
 }

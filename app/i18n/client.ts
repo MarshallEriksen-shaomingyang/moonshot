@@ -1,15 +1,17 @@
 'use client';
 
-import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+
 import { FlatNamespace, KeyPrefix } from 'i18next';
-import i18next from './i18next';
+import { useParams } from 'next/navigation';
 import {
   useTranslation,
   UseTranslationOptions,
   UseTranslationResponse,
   FallbackNs,
 } from 'react-i18next';
+
+import i18next from './i18next';
 
 const runsOnServerSide = typeof window === 'undefined';
 

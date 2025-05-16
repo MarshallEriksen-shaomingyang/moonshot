@@ -1,7 +1,8 @@
-import ProviderHead from './_components/provider-head';
-import ProviderDetail from './_components/provider-detail';
-import ModalTable from './_components/modal-table';
 import HeaderComponent from '@/components/header';
+
+import ModalTable from './_components/modal-table';
+import ProviderDetail from './_components/provider-detail';
+import ProviderHead from './_components/provider-head';
 
 export default function Page() {
   return (

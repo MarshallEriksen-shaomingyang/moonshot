@@ -1,4 +1,5 @@
 import { Splitter } from 'antd';
+
 import RightSidePanel from './_components/right-side';
 
 export default function Chat() {

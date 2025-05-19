@@ -12,7 +12,9 @@ export default function ProviderDetail() {
           <Typography.Title className="!mb-0" level={5}>
             API Key
           </Typography.Title>
-          <Typography.Text>请输入供应商提供的API Key</Typography.Text>
+          <Typography.Text type="secondary">
+            请输入供应商提供的API Key
+          </Typography.Text>
         </div>
         <div className="col-span-2 shrink grow">
           <Input.Password placeholder="请输入你的API Key" />
@@ -23,7 +25,9 @@ export default function ProviderDetail() {
           <Typography.Title className="!mb-0" level={5}>
             API 代理地址
           </Typography.Title>
-          <Typography.Text>请输入包括(https)的完整路径名</Typography.Text>
+          <Typography.Text type="secondary">
+            请输入包括(https)的完整路径名
+          </Typography.Text>
         </div>
         <div className="col-span-2 shrink grow">
           <Input placeholder="https://moonshot.com/api/" />

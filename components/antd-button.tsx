@@ -36,6 +36,7 @@ export default function AntdButton({
       colorPrimaryBg: 'var(--primary-color-300) !important',
       colorPrimaryBgHover: 'var(--primary-color-200) !important',
       colorPrimaryHover: 'var(--primary-color-300) !important',
+      colorPrimaryBorder: 'var(--primary-color-300)!important',
     };
   };
 
@@ -49,7 +50,13 @@ export default function AntdButton({
         },
       }}
     >
-      <Button type={type} shape={shape} icon={icon} {...restProps}>
+      <Button
+        className="!shadow-none"
+        type={type}
+        shape={shape}
+        icon={icon}
+        {...restProps}
+      >
         {children}
       </Button>
     </ConfigProvider>

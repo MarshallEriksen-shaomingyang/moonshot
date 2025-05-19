@@ -52,7 +52,16 @@
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
   }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
   .scroll-hover-hide::-webkit-scrollbar {
     width: 0 !important;
     background: transparent !important;
@@ -61,12 +70,5 @@
   .scroll-hover-hide:hover::-webkit-scrollbar {
     width: 8px !important;
     /* 悬停时显示滚动条宽度 */
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
   }
 }

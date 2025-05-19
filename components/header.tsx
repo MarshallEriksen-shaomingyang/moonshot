@@ -8,9 +8,8 @@ export default function HeaderComponent({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-background flex flex-row justify-between items-center !leading-[var(--moonshot-layout-header-height)] shadow-md rounded-md px-2">
-      {children}
-      <div className="flex-1" />
+    <div className="w-full bg-background h-[var(--moonshot-layout-header-height)] flex flex-row justify-between items-center !leading-[var(--moonshot-layout-header-height)] shadow-md rounded-md px-2">
+      <div className="flex-1">{children}</div>
       <div className="flex items-center gap-2">
         <Tooltip title="修改主题" placement="bottom">
           <Button

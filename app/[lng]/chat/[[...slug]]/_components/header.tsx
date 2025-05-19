@@ -10,7 +10,7 @@ export default function HeaderContent() {
         <Typography.Title level={4} className="select-none !mb-0">
           智能小管家
         </Typography.Title>
-        <Tag className="cursor-pointer" color="success">
+        <Tag className="cursor-pointer" color="cyan">
           gpt4.1-mini
         </Tag>
       </Space>

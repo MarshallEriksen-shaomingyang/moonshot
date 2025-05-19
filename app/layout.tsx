@@ -17,6 +17,7 @@ export async function generateMetadata() {
   return {
     title: t('title'),
     content: t('description'),
+    csp: "default-src 'self'; script-src 'self' 'unsafe-inline';",
   };
 }
 
@@ -71,7 +72,7 @@ export default async function RootLayout({
       <head>
         <script
           defer={true}
-          src={'//at.alicdn.com/t/c/font_4917653_c0335rdwvsr.js'}
+          src={'//at.alicdn.com/t/c/font_4917653_3y724i41klx.js'}
         />
       </head>
       <body

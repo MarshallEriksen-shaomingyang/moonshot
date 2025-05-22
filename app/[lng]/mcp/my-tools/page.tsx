@@ -1,5 +1,8 @@
 'use client';
+import { useState, useCallback } from 'react';
+
 import { Input, Space } from 'antd';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import IconButton from '@/components/antd-button';
@@ -11,10 +14,20 @@ import MCPCard from '../_components/mcp_card';
 
 import MCPHeader from './_components/mcp-header';
 
+const MCPCreate = dynamic(() => import('./_components/mcp-create'), {
+  ssr: false,
+});
+
 export default function Page() {
+  const [open, setOpen] = useState(false);
+
+  const handleModal = useCallback(() => {
+    setOpen((prev: boolean) => !prev);
+  }, []);
   return (
     <div className="flex flex-col w-full h-full">
-      <MCPHeader />
+      <MCPCreate open={open} handleModal={handleModal} />
+      <MCPHeader handleModal={handleModal} />
       <div className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
         <ScrollContent>
           <div className="flex flex-col gap-2">
@@ -49,7 +62,7 @@ export default function Page() {
                 </Space>
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-4 px-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2">
               <div className="col-span-1">
                 <MCPCard />
               </div>

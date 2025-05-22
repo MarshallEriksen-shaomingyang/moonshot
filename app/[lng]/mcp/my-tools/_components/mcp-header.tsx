@@ -1,4 +1,6 @@
 'use client';
+import { memo } from 'react';
+
 import { Typography } from 'antd';
 
 import IconButton from '@/components/antd-button';
@@ -6,7 +8,12 @@ import HeaderComponent from '@/components/header';
 import Icon from '@/components/icon';
 
 const { Title } = Typography;
-export default function MCPHeader() {
+
+interface MCPHeaderProps {
+  handleModal: () => void;
+}
+
+const MCPHeader = ({ handleModal }: MCPHeaderProps) => {
   return (
     <HeaderComponent>
       <div className="w-full flex gap-4 items-center">
@@ -18,10 +25,12 @@ export default function MCPHeader() {
           color="cyan"
           variant="filled"
           icon={<Icon iconClass="icon-edit" svgClass="w-5 h-5" />}
+          onClick={handleModal}
         >
           创建新工具
         </IconButton>
       </div>
     </HeaderComponent>
   );
-}
+};
+export default memo(MCPHeader);

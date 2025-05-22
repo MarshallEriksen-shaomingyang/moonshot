@@ -6,11 +6,11 @@ export default function LngLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-row overflow-hidden min-h-screen w-full">
-      <div className="w-0 lg:w-[7%] invisible !bg-background  lg:visible">
+    <div className="flex overflow-hidden min-h-screen w-full justify-center md:flex-row">
+      <div className="w-0 md:w-[7%] lg:w-[7%] invisible !bg-background  lg:visible">
         <LeftSidePanel />
       </div>
-      {children}
+      <div className="w-[100%] md:w-[93%]">{children}</div>
     </div>
   );
 }

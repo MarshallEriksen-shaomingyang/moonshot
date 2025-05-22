@@ -8,7 +8,7 @@ export default function HeaderComponent({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full bg-background h-[var(--moonshot-layout-header-height)] flex flex-row justify-between items-center !leading-[var(--moonshot-layout-header-height)] shadow-md rounded-md px-2">
+    <div className="w-full bg-background h-[var(--moonshot-layout-header-height)] flex flex-row justify-between items-center !leading-[var(--moonshot-layout-header-height)] shadow-md rounded-md px-4">
       <div className="flex-1">{children}</div>
       <div className="flex items-center gap-2">
         <Tooltip title="修改主题" placement="bottom">
@@ -30,7 +30,7 @@ export default function HeaderComponent({
           />
         </Tooltip>
         {/* TODO: 增加遮罩层动态的光圈 */}
-        <Avatar />
+        <Avatar size={'large'} className="cursor-pointer" />
       </div>
     </div>
   );

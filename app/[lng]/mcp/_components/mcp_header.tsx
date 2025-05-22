@@ -8,7 +8,7 @@ const { Title } = Typography;
 export default function MCPHeader() {
   return (
     <HeaderComponent>
-      <div className="w-fill flex gap-4 items-center">
+      <div className="w-full flex gap-4 items-center">
         <Title level={4} className="!mb-0">
           MCP 工具精选
         </Title>

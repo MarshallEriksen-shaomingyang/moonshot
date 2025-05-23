@@ -72,7 +72,7 @@ export default async function RootLayout({
       <head>
         <script
           defer={true}
-          src={'//at.alicdn.com/t/c/font_4917653_zubbt8u9gqd.js'}
+          src={'//at.alicdn.com/t/c/font_4917653_olzad6aelnf.js'}
         />
       </head>
       <body

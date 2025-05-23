@@ -15,7 +15,7 @@ export default function LeftSidePanel() {
     router.push(path);
   };
   return (
-    <div className="h-screen py-1 border-r-1 border-divider/15 rounded-md hover:bg-background-hover ">
+    <div className="h-screen py-1 border-r-1 border-divider/15 rounded-md ">
       <div className="h-full mb-2">
         <Flex
           className="h-full"
@@ -75,7 +75,7 @@ export default function LeftSidePanel() {
                   variant="filled"
                   size="large"
                   icon={<Icon iconClass="icon-settings" svgClass="w-10 h-10" />}
-                  onClick={() => handleNavigate('/settings')}
+                  onClick={() => handleNavigate('/settings/user-info')}
                 />
               </Tooltip>
             </Space>

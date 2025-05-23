@@ -36,7 +36,7 @@ export default function Page() {
                 <Image
                   src={BannerWork}
                   alt="banner"
-                  className="w-full h-full object-fill"
+                  className="w-full h-full object-fill select-none"
                 />
               </div>
               <div className="w-1/2 h-full flex flex-col gap-2 justify-center items-center">

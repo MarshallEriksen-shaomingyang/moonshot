@@ -1,5 +1,10 @@
 {
   "title": "Moonshot · A creative playground",
   "description": "A plaza for exploring AI-driven automated task execution",
-  "welcome": "Welcome to Moonshot"
+  "welcome": "Welcome to Moonshot",
+  "chat": "Chat with AI",
+  "modal provider": "Model Provider",
+  "MCP Tools": "MCP Tools",
+  "settings": "Settings",
+  "document": "Document"
 }

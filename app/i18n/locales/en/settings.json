@@ -1,0 +1,20 @@
+{
+  "用户信息": "User Info",
+  "修改密码": "Change Password",
+  "关于我们": "About Us",
+  "用户信息设置": "User Information Settings",
+  "更换头像": "Change Avatar",
+  "用户名": "Username",
+  "请输入用户名": "Please enter username",
+  "邮箱": "Email",
+  "请输入邮箱": "Please enter email",
+  "请输入有效的邮箱地址": "Please enter a valid email address",
+  "手机号码": "Phone Number",
+  "个人简介": "Bio",
+  "保存": "Save",
+  "重置": "Reset",
+  "用户信息更新成功": "User information updated successfully",
+  "更新失败，请重试": "Update failed, please try again",
+  "头像上传成功": "Avatar uploaded successfully",
+  "头像上传失败": "Avatar upload failed"
+}

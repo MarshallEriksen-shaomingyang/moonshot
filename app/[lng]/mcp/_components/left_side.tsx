@@ -1,38 +1,41 @@
 'use client';
-import { List, Typography } from 'antd';
+import { useCallback } from 'react';
 
-import AntdButton from '@/components/antd-button';
-import Icon from '@/components/icon';
+import { Typography } from 'antd';
+import { usePathname } from 'next/navigation';
 
-const data = [
-  {
-    title: 'MCP工具精选',
-    icon: 'icon-settings',
-    href: '/',
-  },
-  {
-    title: '聚合器',
-    icon: 'icon-settings',
-    href: '/',
-  },
-  {
-    title: ' 艺术与文化',
-    icon: 'icon-settings',
-    href: '/',
-  },
-  {
-    title: '浏览器自动化',
-    icon: 'icon-settings',
-    href: '/',
-  },
-  {
-    title: '云平台',
-    icon: 'icon-settings',
-    href: '/',
-  },
-];
+import ListButton from '@/components/list-button';
 
 export default function LeftSide() {
+  const pathname = usePathname();
+  const isActive = useCallback((path: string) => pathname === path, [pathname]);
+  const data = [
+    {
+      title: 'MCP工具精选',
+      'icon-dark': 'icon-settings',
+      path: '/',
+    },
+    {
+      title: '聚合器',
+      'icon-light': 'icon-settings',
+      path: '/',
+    },
+    {
+      title: ' 艺术与文化',
+      'icon-light': 'icon-settings',
+      path: '/',
+    },
+    {
+      title: '浏览器自动化',
+      'icon-light': 'icon-settings',
+      path: '/',
+    },
+    {
+      title: '云平台',
+      'icon-light': 'icon-settings',
+      path: '/',
+    },
+  ];
   return (
     <div className="flex flex-col">
       <div className="flex justify-center items-center h-[var(--moonshot-layout-header-height)]">
@@ -40,25 +43,7 @@ export default function LeftSide() {
           Moonshot&nbsp;MCP
         </Typography.Title>
       </div>
-      <List
-        className="!pt-6 px-4 h-[calc(100vh-var(--moonshot-layout-header-height))] overflow-y-auto scroll-smooth scroll-hover-hide"
-        itemLayout="horizontal"
-        dataSource={data}
-        renderItem={item => (
-          <List.Item className="!border-none">
-            <AntdButton
-              type="text"
-              variant="borderless"
-              block
-              icon={<Icon iconClass={item.icon} svgClass="h-8 w-8" />}
-            >
-              <Typography.Text ellipsis className="w-24">
-                {item.title}
-              </Typography.Text>
-            </AntdButton>
-          </List.Item>
-        )}
-      />
+      <ListButton data={data} size="small" isActive={isActive} />
     </div>
   );
 }

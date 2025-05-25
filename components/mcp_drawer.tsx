@@ -5,6 +5,7 @@ interface IProps {
   open: boolean;
   placement?: 'left' | 'right' | 'top' | 'bottom';
   children?: React.ReactNode;
+  onClose?: () => void;
   [key: string]: unknown;
 }
 
@@ -12,6 +13,7 @@ export default function MCPDrawer({
   open,
   children,
   placement = 'right',
+  onClose,
   ...restProps
 }: IProps) {
   return (
@@ -22,7 +24,12 @@ export default function MCPDrawer({
         },
       }}
     >
-      <Drawer placement={placement} open={open} {...restProps}>
+      <Drawer
+        placement={placement}
+        open={open}
+        {...restProps}
+        onClose={onClose}
+      >
         {children}
       </Drawer>
     </ConfigProvider>

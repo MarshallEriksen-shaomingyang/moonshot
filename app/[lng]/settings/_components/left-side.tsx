@@ -8,28 +8,36 @@ import ListButton from '@/components/list-button';
 
 export default function SettingsSide() {
   const pathname = usePathname();
+  console.log('pathname', pathname);
   const { t } = useT('settings');
 
-  const isActive = useCallback((path: string) => pathname === path, [pathname]);
+  const isActive = useCallback(
+    (path: string) => {
+      // 移除语言前缀（如 /zh/）并比较路径
+      const normalizedPathname = pathname.replace(/^\/[a-z]{2}\//, '');
+      return normalizedPathname === path;
+    },
+    [pathname]
+  );
 
   const data = [
     {
       title: t('用户信息'),
       'icon-dark': 'icon-custom-user-copy',
       'icon-light': 'icon-custom-user',
-      path: 'user-info',
+      path: 'settings/user-info',
     },
     {
       title: t('修改密码'),
       'icon-dark': 'icon-reset_password-copy',
       'icon-light': 'icon-reset_password',
-      path: 'change-password',
+      path: 'settings/change-password',
     },
     {
       title: t('关于我们'),
       'icon-dark': 'icon-about',
       'icon-light': 'icon-about-copy',
-      path: 'about',
+      path: 'settings/about',
     },
   ];
 

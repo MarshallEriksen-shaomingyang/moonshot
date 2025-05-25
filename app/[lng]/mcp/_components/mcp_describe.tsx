@@ -17,5 +17,9 @@ export default function MCPToolDetail() {
     ~~Deleted~~ text.
     `;
   const sanitizedSource = DOMPurify.sanitize(markdown);
-  return <MarkdownViewer source={sanitizedSource} />;
+  return (
+    <div className="markdown-body">
+      <MarkdownViewer source={sanitizedSource} />
+    </div>
+  );
 }

@@ -20,7 +20,7 @@ export default function GithubContent() {
                 }
                 target="_blank"
               >
-                <div className="!outline-2 !outline-offset-2 rounded-md !border-teal-50">
+                <div className="!outline-2 !outline-offset-2 rounded-md !border-primary">
                   <Avatar
                     shape="square"
                     size={64}

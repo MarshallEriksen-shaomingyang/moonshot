@@ -1,6 +1,7 @@
 'use client';
 import { Flex, Space, Tooltip } from 'antd';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { useT } from '@/app/i18n/client';
@@ -58,7 +59,7 @@ export default function LeftSidePanel() {
                   onClick={() => handleNavigate('/provider')}
                 />
               </Tooltip>
-              <Tooltip title={t('MCP Tools')} placement="right">
+              <Tooltip title={t('MCP Tools')} placement="top">
                 <AntdButton
                   type="primary"
                   shape="circle"
@@ -81,7 +82,12 @@ export default function LeftSidePanel() {
             </Space>
           </div>
           <Space direction="vertical" size={'middle'}>
-            <Tooltip title="github" placement="right">
+            <Link
+              href={
+                'https://github.com/MarshallEriksen-shaomingyang/moonshot.git'
+              }
+              target="_blank"
+            >
               <AntdButton
                 type="primary"
                 shape="circle"
@@ -94,9 +100,10 @@ export default function LeftSidePanel() {
                   />
                 }
               />
-            </Tooltip>
-            <Tooltip title={t('document')} placement="right">
+            </Link>
+            {/* <Tooltip title={t('document')} placement="right">
               <AntdButton
+                disabled
                 type="primary"
                 shape="circle"
                 variant="filled"
@@ -105,7 +112,7 @@ export default function LeftSidePanel() {
                   <Icon iconClass="icon-Book" svgClass="w-10 h-10 text-white" />
                 }
               />
-            </Tooltip>
+            </Tooltip> */}
           </Space>
         </Flex>
       </div>

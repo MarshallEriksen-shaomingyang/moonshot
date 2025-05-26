@@ -2,5 +2,9 @@
   "search": {
     "placeholder": "search assistants ...",
     "noResults": "No related assistants found"
+  },
+  "welcome": {
+    "title": "Welcome to the chat!",
+    "description": "Feel free to ask anything."
   }
 }

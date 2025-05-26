@@ -2,5 +2,9 @@
   "search": {
     "placeholder": "搜索助手...",
     "noResults": "没有找到相关助手"
+  },
+  "welcome": {
+    "title": "你好！我是你的助理",
+    "description": "我可以帮你解答工作问题、提供信息，或者协助您完成特定的任务。你今天需要什么帮助"
   }
 }

@@ -8,7 +8,7 @@ import Icon from '@/components/icon';
 import AssistantCard from './assistant-card';
 
 export default function AssistantSearchContent() {
-  const { t } = useT('chat');
+  const { t } = useT();
 
   //   TODO: replace with real search results
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -10,7 +10,7 @@ export default function CommunicateLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Layout className="flex flex-row overflow-hidden min-h-screen w-full">
+    <Layout className="flex flex-row overflow-hidden h-full w-full">
       <HeaderContent />
       <Content className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
         {children}

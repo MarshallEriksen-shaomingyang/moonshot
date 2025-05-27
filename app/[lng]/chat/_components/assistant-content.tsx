@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react';
+
 import type { CollapseProps } from 'antd';
 import { Collapse, Typography, Popover, Space } from 'antd';
 
@@ -8,25 +10,28 @@ import AssistantCard from './assistant-card';
 
 const { Title } = Typography;
 
-const ExtraSettings = () => {
+const ExtraSettings = ({ isDefault }: { isDefault: boolean }) => {
   const content = (
     <Space.Compact direction="vertical">
       <AntdButton
         type="text"
-        icon={<Icon iconClass="icon-create" svgClass="w-8 h-8" />}
+        color="cyan"
+        icon={<Icon iconClass="icon-edit" svgClass="w-4 h-4" />}
       >
-        新建助手
+        创建助手
       </AntdButton>
-      <AntdButton
-        type="text"
-        icon={<Icon iconClass="icon-create" svgClass="w-8 h-8" />}
-      >
-        创建分组
-      </AntdButton>
+      {isDefault && (
+        <AntdButton
+          type="text"
+          icon={<Icon iconClass="icon-edit" svgClass="w-4 h-4" />}
+        >
+          创建分组
+        </AntdButton>
+      )}
       <AntdButton
         danger
         type="text"
-        icon={<Icon iconClass="icon-delete1" svgClass="w-8 h-8" />}
+        icon={<Icon iconClass="icon-delete1" svgClass="w-4 h-4" />}
       >
         删除分组
       </AntdButton>
@@ -43,6 +48,7 @@ const ExtraSettings = () => {
         size="small"
         shape="circle"
         type="text"
+        onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
         icon={<Icon iconClass="icon-ellipsis" svgClass="w-10 h-10" />}
       />
     </Popover>
@@ -50,38 +56,48 @@ const ExtraSettings = () => {
 };
 
 export default function AssistantContent() {
-  const items: CollapseProps['items'] = [
+  const getItems: (
+    panelStyle: CSSProperties
+  ) => CollapseProps['items'] = panelStyle => [
     {
       key: '1',
-      label: <Title level={5}>助手列表</Title>,
-      children: <AssistantCard />,
-      extra: ExtraSettings(),
+      label: <Title level={5}>默认助手</Title>,
+      children: <AssistantCard title="默认助手" />,
+      extra: ExtraSettings({ isDefault: true }),
+      showArrow: false,
+      style: panelStyle,
     },
     {
       key: '2',
       label: <Title level={5}>Assistant 2</Title>,
       children: <AssistantCard />,
-      extra: ExtraSettings(),
+      showArrow: false,
+      style: panelStyle,
+      extra: ExtraSettings({ isDefault: false }),
     },
     {
       key: '3',
       label: <Title level={5}>Assistant 3</Title>,
       children: <AssistantCard />,
-      extra: ExtraSettings(),
-    },
-    {
-      key: '4',
-      label: <Title level={5}>Assistant 4</Title>,
-      children: <AssistantCard />,
-      extra: ExtraSettings(),
-    },
-    {
-      key: '5',
-      label: <Title level={5}>Assistant 5</Title>,
-      children: <AssistantCard />,
-      extra: ExtraSettings(),
+      showArrow: false,
+      style: panelStyle,
+      extra: ExtraSettings({ isDefault: false }),
     },
   ];
 
-  return <Collapse ghost size="small" items={items} defaultActiveKey={['1']} />;
+  const panelStyle: React.CSSProperties = {
+    paddingBlock: 0,
+    padding: 0,
+    border: 'none',
+  };
+
+  return (
+    <Collapse
+      ghost
+      bordered={false}
+      size="small"
+      items={getItems(panelStyle)}
+      defaultActiveKey={['1']}
+    />
+  );
 }

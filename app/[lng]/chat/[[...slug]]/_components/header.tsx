@@ -7,10 +7,13 @@ export default function HeaderContent() {
     <HeaderComponent>
       <Space size={8}>
         <Avatar />
-        <Typography.Title level={4} className="select-none !mb-0">
-          智能小管家
+        <Typography.Title
+          level={5}
+          className="select-none !text-base !font-semibold !mb-0 !mt-0"
+        >
+          助手名称
         </Typography.Title>
-        <Tag className="cursor-pointer" color="cyan">
+        <Tag className="cursor-pointer" color="var(--second-color)">
           gpt4.1-mini
         </Tag>
       </Space>

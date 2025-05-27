@@ -1,5 +1,5 @@
 'use client';
-import WelcomeView from './chat/chat_welcome';
+import WelcomeView from './chat_welcome';
 
 export default function Chat() {
   return (

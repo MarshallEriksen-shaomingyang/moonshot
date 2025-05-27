@@ -38,7 +38,7 @@ export default function WelcomeView() {
             variant="outlined"
           />
           <Bubble
-            content="张哥一宿三次的秘密"
+            content="作者一宿三十次的秘密"
             className="cursor-pointer select-none"
             variant="outlined"
           />

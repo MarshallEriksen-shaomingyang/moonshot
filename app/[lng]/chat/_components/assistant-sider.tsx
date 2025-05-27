@@ -1,11 +1,10 @@
 'use client';
 import { useState } from 'react';
 
-import { Typography, Input, Space } from 'antd';
+import { Typography, Input } from 'antd';
 
 import Icon from '@/components/icon';
 
-import AssistantCard from './assistant-card';
 import AssistantContent from './assistant-content';
 import AssistantSearchContent from './assistant-search-content';
 
@@ -27,7 +26,6 @@ export default function AssistantSider() {
       </div>
       <div className="w-full px-1 mt-9">
         <Input
-          size="large"
           placeholder="搜索助手..."
           variant="filled"
           allowClear
@@ -37,17 +35,7 @@ export default function AssistantSider() {
           onChange={handleSearch}
         />
         <div className="w-full mt-4">
-          {searchTerm ? (
-            <AssistantSearchContent />
-          ) : (
-            <Space direction="vertical" className="w-full">
-              <div className="px-2">
-                <AssistantCard title="默认助手" />
-              </div>
-
-              <AssistantContent />
-            </Space>
-          )}
+          {searchTerm ? <AssistantSearchContent /> : <AssistantContent />}
         </div>
       </div>
     </div>

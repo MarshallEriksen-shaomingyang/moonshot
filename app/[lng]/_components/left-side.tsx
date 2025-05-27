@@ -59,7 +59,7 @@ export default function LeftSidePanel() {
                   onClick={() => handleNavigate('/provider')}
                 />
               </Tooltip>
-              <Tooltip title={t('MCP Tools')} placement="top">
+              <Tooltip title={t('MCP Tools')} placement="right">
                 <AntdButton
                   type="primary"
                   shape="circle"

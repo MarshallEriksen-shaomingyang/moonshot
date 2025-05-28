@@ -9,7 +9,7 @@ import { useT } from '@/app/i18n/client';
 import AntdButton from '@/components/antd-button';
 
 export default function UserAvatarForm() {
-  // TODO 需要重构
+  // TODO 需要重构 参考https://mui.com/store/previews/minimal-dashboard/
   const [messageApi, contextHolder] = message.useMessage();
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [isHoveringAvatar, setIsHoveringAvatar] = useState(false);

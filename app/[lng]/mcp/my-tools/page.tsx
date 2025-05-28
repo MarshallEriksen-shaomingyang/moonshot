@@ -14,7 +14,7 @@ import MCPCard from '../_components/mcp_card';
 
 import MCPHeader from './_components/mcp-header';
 
-const MCPCreate = dynamic(() => import('./_components/mcp-create'), {
+const MCPCreate = dynamic(() => import('../../_components/mcp-create'), {
   ssr: false,
 });
 

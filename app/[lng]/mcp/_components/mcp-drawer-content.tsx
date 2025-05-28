@@ -5,8 +5,9 @@ import MCPDrawer from '@/components/mcp_drawer';
 import ScrollContent from '@/components/scroll-content';
 import useMCPEditStore from '@/store/mcp-edit-store';
 
+import MCPForm from '../../_components/mcp_form';
+
 import MCPToolDetail from './mcp_describe';
-import MCPForm from './mcp_form';
 
 export default function MCPDrawerContent() {
   const { open, state, toggleClose } = useMCPEditStore();

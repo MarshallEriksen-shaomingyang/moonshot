@@ -34,7 +34,6 @@ export default memo(function ListButton({
           <IconButton
             size={size}
             type={isActive(item.path) ? 'primary' : 'text'}
-            secondary
             block
             icon={
               <Icon

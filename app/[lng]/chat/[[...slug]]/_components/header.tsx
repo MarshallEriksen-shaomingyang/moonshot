@@ -1,3 +1,4 @@
+'use client';
 import { Avatar, Space, Tag, Typography } from 'antd';
 
 import HeaderComponent from '@/components/header';

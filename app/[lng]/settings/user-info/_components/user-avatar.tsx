@@ -6,9 +6,10 @@ import { Upload, Tooltip, message } from 'antd';
 import type { UploadChangeParam } from 'antd/es/upload';
 
 import { useT } from '@/app/i18n/client';
-import AntdButtom from '@/components/antd-button';
+import AntdButton from '@/components/antd-button';
 
 export default function UserAvatarForm() {
+  // TODO 需要重构
   const [messageApi, contextHolder] = message.useMessage();
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [isHoveringAvatar, setIsHoveringAvatar] = useState(false);
@@ -57,7 +58,7 @@ export default function UserAvatarForm() {
               onChange={handleAvatarChange}
             >
               <Tooltip title={t('更换头像')} placement="bottom">
-                <AntdButtom
+                <AntdButton
                   type="primary"
                   shape="circle"
                   icon={<CameraOutlined />}

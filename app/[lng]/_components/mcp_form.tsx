@@ -5,10 +5,9 @@ import { Form, Input, Select } from 'antd';
 
 import Icon from '@/components/icon';
 
-import { MCPCreateAction } from '../types';
-
-import MCPToolForm from './mcp-package';
-import McpUrlForm from './mcp-url';
+import MCPToolForm from '../mcp/_components/mcp-package';
+import McpUrlForm from '../mcp/_components/mcp-url';
+import { MCPCreateAction } from '../mcp/types';
 
 export default function MCPForm() {
   const [action, setAction] = useState<MCPCreateAction>('http');

@@ -1,9 +1,7 @@
-import { Card, Avatar, ConfigProvider, Space, Popover } from 'antd';
+import { Card, Avatar, ConfigProvider, Space, Popover, Typography } from 'antd';
 
 import AntdButton from '@/components/antd-button';
 import Icon from '@/components/icon';
-
-const { Meta } = Card;
 
 interface IProps {
   className?: string;
@@ -44,32 +42,44 @@ export default function AssistantCard({
       theme={{
         components: {
           Card: {
-            bodyPadding: 3,
+            bodyPadding: 5,
           },
         },
       }}
     >
-      <Card
-        variant="borderless"
-        className="cursor-pointer relative !shadow-none hover:!bg-foreground/20"
-        {...props}
-      >
-        <Meta
-          avatar={<Avatar src={avatar} />}
-          title={title}
-          description={description}
-        />
-        <Popover content={ExtraSettings} trigger="click" placement="right">
-          <AntdButton
-            className="!absolute right-2 top-[50%] translate-y-[-50%]"
-            type="text"
-            size="small"
-            shape="circle"
-            variant="outlined"
-            icon={<Icon iconClass="icon-ellipsis-v" svgClass="w-10 h-10" />}
-          />
-        </Popover>
-      </Card>
+      <div className="w-full">
+        <Card
+          variant="borderless"
+          className="cursor-pointer relative !shadow-none hover:!bg-foreground/20"
+          {...props}
+        >
+          <div className="flex items-center gap-2 w-full overflow-hidden">
+            <Avatar src={avatar} size={46} />
+            <div className="flex flex-col mt-2">
+              <Typography.Title level={5} className="!text-base !mb-0">
+                {title}
+              </Typography.Title>
+              <Typography.Paragraph
+                type="secondary"
+                className="!mb-0"
+                ellipsis={{ rows: 1 }}
+              >
+                {description}
+              </Typography.Paragraph>
+            </div>
+          </div>
+          <Popover content={ExtraSettings} trigger="click" placement="right">
+            <AntdButton
+              className="!absolute right-2 top-[50%] translate-y-[-50%]"
+              type="text"
+              size="small"
+              shape="circle"
+              variant="outlined"
+              icon={<Icon iconClass="icon-ellipsis-v" svgClass="w-10 h-10" />}
+            />
+          </Popover>
+        </Card>
+      </div>
     </ConfigProvider>
   );
 }

@@ -5,7 +5,7 @@ import RightSidePanel from './_components/right-side';
 
 export default function Page() {
   return (
-    <Splitter className="h-full">
+    <Splitter>
       <Splitter.Panel min={'50%'}>
         <MiddleContent />
       </Splitter.Panel>

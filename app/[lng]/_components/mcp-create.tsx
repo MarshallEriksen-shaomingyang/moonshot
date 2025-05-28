@@ -5,7 +5,7 @@ import { Modal } from 'antd';
 
 import ScrollContent from '@/components/scroll-content';
 
-import MCPForm from '../../_components/mcp_form';
+import MCPForm from './mcp_form';
 
 interface ModalType {
   open: boolean;

@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 
 import type { CollapseProps } from 'antd';
-import { Collapse, Typography, Popover, Space } from 'antd';
+import { Collapse, Typography, Popover, Space, ConfigProvider } from 'antd';
 
 import AntdButton from '@/components/antd-button';
 import Icon from '@/components/icon';
@@ -86,18 +86,30 @@ export default function AssistantContent() {
   ];
 
   const panelStyle: React.CSSProperties = {
-    paddingBlock: 0,
-    padding: 0,
     border: 'none',
   };
 
   return (
-    <Collapse
-      ghost
-      bordered={false}
-      size="small"
-      items={getItems(panelStyle)}
-      defaultActiveKey={['1']}
-    />
+    <ConfigProvider
+      theme={{
+        token: {
+          paddingSM: 0,
+        },
+        components: {
+          Collapse: {
+            /* 这里是你的组件 token */
+            borderlessContentPadding: 2,
+          },
+        },
+      }}
+    >
+      <Collapse
+        ghost
+        bordered={false}
+        size="small"
+        items={getItems(panelStyle)}
+        defaultActiveKey={['1']}
+      />
+    </ConfigProvider>
   );
 }

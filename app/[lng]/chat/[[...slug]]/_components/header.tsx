@@ -13,7 +13,7 @@ export default function HeaderContent() {
         >
           助手名称
         </Typography.Title>
-        <Tag className="cursor-pointer" color="var(--second-color)">
+        <Tag className="cursor-pointer" color="var(--primary-color)">
           gpt4.1-mini
         </Tag>
       </Space>

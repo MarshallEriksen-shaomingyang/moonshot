@@ -24,6 +24,12 @@ export default function LeftSide() {
       path: 'mcp',
     },
     {
+      title: '我的MCP工具',
+      'icon-dark': 'icon-Star',
+      'icon-light': 'icon-Star-copy',
+      path: 'mcp/my-tools',
+    },
+    {
       title: '聚合器',
       'icon-dark': 'icon-robot',
       'icon-light': 'icon-robot-copy',
@@ -57,7 +63,7 @@ export default function LeftSide() {
   return (
     <div className="flex flex-col">
       <div className="flex justify-center items-center h-[var(--moonshot-layout-header-height)]">
-        <Typography.Title className="subpixel-antialiase text-center bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text !text-transparent !mb-0 !mt-2">
+        <Typography.Title className="subpixel-antialiase text-center bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text !text-transparent !mb-0">
           Moonshot&nbsp;MCP
         </Typography.Title>
       </div>

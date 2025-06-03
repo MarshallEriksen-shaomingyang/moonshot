@@ -14,10 +14,6 @@ export default function ProviderForm() {
       <Form.Item label="提供商名称" name={'provider_name'} required>
         <Input />
       </Form.Item>
-      <Form.Item label="提供商简介" name={'provider_describe'}>
-        <Input.TextArea />
-      </Form.Item>
-      {/* TODO: 当用户输入url给用户显示图片和名称 */}
       <Form.Item label="提供商logo" name={'provider_logo'}>
         <Input />
       </Form.Item>

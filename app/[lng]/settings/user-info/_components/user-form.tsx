@@ -38,19 +38,7 @@ export default function UserForm() {
       className="[&_.ant-form-item]:mb-6"
     >
       <Form.Item
-        label={t('用户名')}
-        name="username"
-        rules={[{ required: true, message: t('请输入用户名') }]}
-      >
-        <Input
-          value={formData.username}
-          onChange={handleInputChange}
-          className="w-full px-4 py-3 border border-[rgba(150,173,233,0.2)] rounded-xl focus:outline-none focus:border-[#6147FF] focus:ring-2 focus:ring-[rgba(97,71,255,0.1)]"
-        />
-      </Form.Item>
-
-      <Form.Item
-        label={t('邮箱')}
+        label={t('电子邮件地址')}
         name="email"
         rules={[
           { required: true, message: t('请输入邮箱') },
@@ -60,36 +48,21 @@ export default function UserForm() {
         <Input
           type="email"
           value={formData.email}
+          readOnly
           onChange={handleInputChange}
           className="w-full px-4 py-3 border border-[rgba(150,173,233,0.2)] rounded-xl focus:outline-none focus:border-[#6147FF] focus:ring-2 focus:ring-[rgba(97,71,255,0.1)]"
-        />
-      </Form.Item>
-
-      <Form.Item label={t('手机号码')} name="phone">
-        <Input
-          type="tel"
-          value={formData.phone}
-          onChange={handleInputChange}
-          className="w-full px-4 py-3 border border-[rgba(150,173,233,0.2)] rounded-xl focus:outline-none focus:border-[#6147FF] focus:ring-2 focus:ring-[rgba(97,71,255,0.1)]"
-        />
-      </Form.Item>
-
-      <Form.Item label={t('个人简介')} name="bio">
-        <Input.TextArea
-          rows={4}
-          value={formData.bio}
-          onChange={handleInputChange}
-          className="w-full px-4 py-3 border border-[rgba(150,173,233,0.2)] rounded-xl focus:outline-none focus:border-[#6147FF] focus:ring-2 focus:ring-[rgba(97,71,255,0.1)] resize-y"
         />
       </Form.Item>
       <Form.Item>
-        <AntdButton
-          type="primary"
-          htmlType="submit"
-          className="w-full h-12 rounded-xl text-base font-semibold"
-        >
-          {t('保存')}
-        </AntdButton>
+        <div className="flex justify-end">
+          <AntdButton
+            type="primary"
+            htmlType="submit"
+            className="rounded-xl text-base font-semibold"
+          >
+            {t('保存')}
+          </AntdButton>
+        </div>
       </Form.Item>
     </Form>
   );

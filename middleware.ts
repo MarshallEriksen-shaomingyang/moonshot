@@ -1,5 +1,7 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 import acceptLanguage from 'accept-language';
+import { NextResponse, NextRequest } from 'next/server';
+
 import {
   fallbackLng,
   languages,
@@ -9,10 +11,14 @@ import {
 
 acceptLanguage.languages(languages);
 
+export default clerkMiddleware();
+
 export const config = {
   // Avoid matching for static files, API routes, etc.
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)',
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
   ],
 };
 

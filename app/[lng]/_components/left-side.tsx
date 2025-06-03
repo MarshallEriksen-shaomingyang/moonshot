@@ -29,6 +29,7 @@ export default function LeftSidePanel() {
             <Image
               src={Logo}
               alt="logo"
+              priority
               className="select-none cursor-pointer mb-1"
             />
             <Space

@@ -28,10 +28,10 @@ export default function SettingsSide() {
       path: 'settings/user-info',
     },
     {
-      title: t('修改密码'),
+      title: t('安全'),
       'icon-dark': 'icon-reset_password-copy',
       'icon-light': 'icon-reset_password',
-      path: 'settings/change-password',
+      path: 'settings/security',
     },
     {
       title: t('关于我们'),

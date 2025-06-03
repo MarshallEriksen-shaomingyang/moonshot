@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Tooltip, List } from 'antd';
 import { useRouter } from 'next/navigation';
 
+import { useT } from '@/app/i18n/client';
 import AntdButton from '@/components/antd-button';
 import AntdSearchInput from '@/components/antd-input-search';
 import Icon from '@/components/icon';
@@ -58,6 +59,7 @@ const data = [
 
 export default function ModalLists() {
   const router = useRouter();
+  const { t } = useT('provider');
   const [searchTerm, setSearchTerm] = useState('');
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -70,16 +72,16 @@ export default function ModalLists() {
       <div className="px-2 h-[var(--moonshot-layout-header-height)] mt-2 flex justify-between gap-2 items-center">
         <AntdSearchInput
           size="middle"
-          placeholder="搜索模型"
+          placeholder={t('搜索模型')}
           onChange={handleSearch}
           value={searchTerm}
         />
-        <Tooltip title="添加自定义模型" placement="bottom">
+        <Tooltip title={t('新建模型')} placement="bottom">
           <AntdButton
             shape="circle"
             type="primary"
             size="middle"
-            icon={<Icon iconClass="icon-Edit" svgClass="w-12 h-12" />}
+            icon={<Icon iconClass="icon-edit" svgClass="w-5 h-6" />}
             onClick={() => handleNavigate('create')}
           />
         </Tooltip>

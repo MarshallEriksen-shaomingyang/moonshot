@@ -15,7 +15,7 @@ export default function Page() {
         <MCPHeader />
         <div className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
           <ScrollContent>
-            <div className="p-4 w-full grid md:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="w-full grid md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <MCPCard />
               </div>

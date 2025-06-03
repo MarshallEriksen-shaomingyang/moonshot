@@ -65,7 +65,7 @@ export default function ModalTable() {
             <AntdButton
               danger
               size="small"
-              icon={<Icon iconClass="icon-delete1" svgClass="w-8 h-8" />}
+              icon={<Icon iconClass="icon-delete1" svgClass="w-5 h-5" />}
             />
           </Tooltip>
           <Tooltip title="禁用模型" placement="bottomLeft">

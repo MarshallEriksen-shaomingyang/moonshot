@@ -1,9 +1,12 @@
 import { Splitter } from 'antd';
 
-import MiddleContent from './_components/middle-content';
-import RightSidePanel from './_components/right-side';
+import MiddleContent from '../_components/middle-content';
+import RightSidePanel from '../_components/right-side';
 
 export default function Page() {
+  /**
+   * @description 具体的聊天页面
+   */
   return (
     <Splitter>
       <Splitter.Panel min={'50%'}>

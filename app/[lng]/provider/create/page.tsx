@@ -9,7 +9,7 @@ export default function Page() {
       <ProviderHead />
       <div className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
         <ScrollContent>
-          <div className="h-full flex justify-center items-center">
+          <div className="h-full flex justify-center items-center p-8">
             <ProviderForm />
           </div>
         </ScrollContent>

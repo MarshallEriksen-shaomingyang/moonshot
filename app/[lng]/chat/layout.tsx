@@ -1,29 +1,26 @@
-import { Splitter } from 'antd';
-import dynamic from 'next/dynamic';
+import { Layout, Splitter } from 'antd';
 
-import AssistantSider from './_components/assistant-sider';
+import HeaderContent from './_components/header';
 
-const AssistantEdit = dynamic(() => import('./_components/assistant-edit'));
-
-export default function ChatLayout({
+export default function CommunicateLayout({
   children,
+  drawer,
 }: Readonly<{
   children: React.ReactNode;
+  drawer: React.ReactNode;
 }>) {
   return (
     <>
-      <AssistantEdit />
+      {drawer}
       <Splitter>
-        <Splitter.Panel
-          defaultSize="20%"
-          collapsible
-          min={'15%'}
-          max={'25%'}
-          className="invisible !bg-background md:visible"
-        >
-          <AssistantSider />
+        <Splitter.Panel collapsible>
+          <Layout className="flex flex-row overflow-hidden h-full w-full">
+            <HeaderContent />
+            <div className="h-[calc(100vh-var(--moonshot-layout-header-height))]">
+              {children}
+            </div>
+          </Layout>
         </Splitter.Panel>
-        <Splitter.Panel collapsible>{children}</Splitter.Panel>
       </Splitter>
     </>
   );

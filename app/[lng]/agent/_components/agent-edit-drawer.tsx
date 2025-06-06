@@ -17,6 +17,7 @@ import type { InputRef } from 'antd';
 import { useT } from '@/app/i18n/client';
 import AntdButton from '@/components/antd-button';
 import ScrollContent from '@/components/scroll-content';
+import useAgentDrawerStore from '@/store/agent-drawer-store';
 
 const { TextArea } = Input;
 let index = 0;
@@ -27,6 +28,8 @@ export default function AssistantEdit() {
    * @returns {JSX.Element}
    */
   const { t } = useT('chat');
+  const editOpen = useAgentDrawerStore(state => state.editOpen);
+  const handleEditState = useAgentDrawerStore(state => state.handleEditState);
   const [items, setItems] = useState(['jack', 'lucy']);
   const [name, setName] = useState('');
   const inputRef = useRef<InputRef>(null);
@@ -45,7 +48,12 @@ export default function AssistantEdit() {
     }, 0);
   };
   return (
-    <Drawer open={false} title={t('编辑助手')} size={'large'}>
+    <Drawer
+      open={editOpen}
+      onClose={() => handleEditState()}
+      title={t('编辑助手')}
+      size={'large'}
+    >
       <ScrollContent>
         <Flex vertical gap="middle" align="center">
           <div className="p-6">
@@ -127,15 +135,17 @@ export default function AssistantEdit() {
                   options={items.map(item => ({ label: item, value: item }))}
                 />
               </Form.Item>
-              <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
-                <Space>
-                  <AntdButton htmlType="reset" type="text">
-                    {t('取消')}
-                  </AntdButton>
-                  <AntdButton htmlType="submit" type="primary" secondary>
-                    {t('创建助手并会话')}
-                  </AntdButton>
-                </Space>
+              <Form.Item>
+                <div className="flex justify-end">
+                  <Space>
+                    <AntdButton type="text" onClick={() => handleEditState()}>
+                      {t('取消')}
+                    </AntdButton>
+                    <AntdButton htmlType="submit" type="primary" secondary>
+                      {t('创建助手并会话')}
+                    </AntdButton>
+                  </Space>
+                </div>
               </Form.Item>
             </Form>
           </Flex>

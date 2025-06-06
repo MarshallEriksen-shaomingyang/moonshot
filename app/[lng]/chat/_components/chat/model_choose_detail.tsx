@@ -19,7 +19,7 @@ const Header = () => {
       <div className="col-span-1">
         <AntdButton
           size="small"
-          type="primary"
+          type="text"
           secondary
           icon={
             <Icon

@@ -13,6 +13,6 @@ const items: GetProp<ConversationsProps, 'items'> = Array.from({
   disabled: index === 3,
 }));
 
-export default function MoonshotList() {
+export default function ChatList() {
   return <Conversations items={items} defaultActiveKey="item1" />;
 }

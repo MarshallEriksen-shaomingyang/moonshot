@@ -23,6 +23,7 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
+  console.log('Middleware triggered for:', req.nextUrl.pathname);
   // Ignore paths with "icon" or "chrome"
   if (
     req.nextUrl.pathname.indexOf('icon') > -1 ||
